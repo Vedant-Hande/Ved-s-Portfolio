@@ -5,7 +5,7 @@
   --accent-color: #7928ff;
   --background-light: #0a0a1f;
   --text-light: #ffffff;
-  --background-dark: #000010;
+  /* --background-dark: #000010; */
   --text-dark: #00ffff;
   --neon-glow: 0 0 10px var(--primary-color);
   --transition-speed: 0.3s;
@@ -19,6 +19,8 @@ body {
   color: var(--text-light);
   position: relative;
   overflow-x: hidden;
+  background-image: url(Binary\ Code.jpeg);
+  background-size: contain;
 }
 
 body::before {
@@ -28,28 +30,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      0deg,
-      transparent 24%,
-      rgba(0, 255, 255, 0.05) 25%,
-      rgba(0, 255, 255, 0.05) 26%,
-      transparent 27%,
-      transparent 74%,
-      rgba(0, 255, 255, 0.05) 75%,
-      rgba(0, 255, 255, 0.05) 76%,
-      transparent 77%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 24%,
-      rgba(0, 255, 255, 0.05) 25%,
-      rgba(0, 255, 255, 0.05) 26%,
-      transparent 27%,
-      transparent 74%,
-      rgba(0, 255, 255, 0.05) 75%,
-      rgba(0, 255, 255, 0.05) 76%,
-      transparent 77%
-    );
+
   background-size: 50px 50px;
   z-index: -1;
 }
