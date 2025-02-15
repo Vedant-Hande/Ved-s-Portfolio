@@ -19,7 +19,7 @@ body {
   color: var(--text-light);
   position: relative;
   overflow-x: hidden;
-  background-image: url(luca-micheli-ruWkmt3nU58-unsplash.jpg);
+  background-image: url(keith-misner-h0Vxgz5tyXA-unsplash.jpg);
   background-size: contain;
 }
 
@@ -105,6 +105,11 @@ body::before {
   max-width: 200px;
   transition: transform 0.3s ease;
 }
+/* @media (min-width: 2900) {
+  .container{
+    flex-wrap: wrap;
+  }
+} */
 
 .developer-image img {
   position: relative;
@@ -505,7 +510,7 @@ body::before {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .animated-text {
     font-size: 2.5rem;
   }
@@ -527,8 +532,9 @@ body::before {
   }
 }
 
-@media (max-width: 991px) {
-  .developer-image {
-    margin-top: 3rem;
+@media (max-width: 990px) and (min-width: 200px) {
+  .section-title {
+    display: inline-block;
+    flex-wrap: wrap;
   }
 }
