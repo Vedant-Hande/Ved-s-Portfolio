@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: cursive;
+  font-family:monospace;
   transition: background-color var(--transition-speed),
     color var(--transition-speed);
   background-color: var(--background-dark);
@@ -239,6 +239,8 @@ body::before {
   box-shadow: var(--neon-glow);
   backdrop-filter: blur(10px);
   transition: all var(--transition-speed);
+  /* display: block; */
+  /* width: 80%; */
 }
 
 .card:hover {
@@ -249,6 +251,10 @@ body::before {
 /* Skills */
 .skill-item {
   margin-bottom: 2rem;
+}
+
+.skill-title {
+  display: block;
 }
 
 .skill-label {
@@ -491,14 +497,14 @@ body::before {
 }
 
 .social-link {
-  color: var(--primary-color);
+  color: antiquewhite;
   font-size: 1.5rem;
   transition: all var(--transition-speed);
   text-shadow: var(--neon-glow);
 }
 
 .social-link:hover {
-  color: var(--secondary-color);
+  color: #ff00ff;
   transform: translateY(-3px) scale(1.1);
 }
 
