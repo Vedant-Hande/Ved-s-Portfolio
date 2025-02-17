@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family:monospace;
+  font-family: monospace;
   transition: background-color var(--transition-speed),
     color var(--transition-speed);
   background-color: var(--background-dark);
