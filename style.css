@@ -206,9 +206,6 @@ body::before {
   /* border-radius: 50%; */
   mix-blend-mode: normal;
   /* position: relative; */
-  margin-right: 25px;
-  top: -35px;
-  right: -65px;
 }
 
 .img1 {
