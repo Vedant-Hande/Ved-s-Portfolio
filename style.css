@@ -415,7 +415,7 @@ footer p {
   padding: 12px 20px;
   border: none;
   border-radius: 1rem;
-  background-color: rgba(169, 183, 15, 0.5); /* Accent Color */
+  background-color: #a9b70f; /* Accent Color */
   color: #fff; /* White */
   font-size: 18px;
   width: 100%;
@@ -425,7 +425,7 @@ footer p {
 }
 
 .contact-form button:hover {
-  background-color: #222;
+  background-color: #87910b;
 }
 
 .social-media {
