@@ -11,6 +11,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("IkedKSSEE2Cg8_Zof"); // Replace with your EmailJS public key
+      })();
+    </script>
   </head>
   <body>
     <nav class="navbar">
@@ -48,9 +54,7 @@
     <section id="about">
       <div class="container">
         <div class="about-image">
-          <img
-            src="IMG/python.png"
-            alt="About Vedant" />
+          <img src="IMG/python.png" alt="About Vedant" />
         </div>
         <div class="about-content">
           <h2>Let me introduce myself :)</h2>
@@ -337,15 +341,6 @@
         <p>&copy; 2024 Vedant Hande. All rights reserved &heartsuit;</p>
       </div>
     </footer>
-    <script>
-      document
-        .querySelector(".contact-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          alert(
-            "Form submission is simulated. Replace this with actual submission handling."
-          );
-        });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
