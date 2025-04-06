@@ -194,7 +194,6 @@ body {
   color: #ccc;
 }
 
-
 #services {
   background-color: #1a1a1a;
   padding: 80px 0;
@@ -448,7 +447,7 @@ footer p {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .contact-section {
     padding: 30px 10px;
     margin: 10px auto;
