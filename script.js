@@ -29,3 +29,74 @@ document
       }
     );
   });
+
+// Loading Animation
+window.addEventListener("load", function () {
+  const loader = document.querySelector(".loader");
+  setTimeout(() => {
+    loader.classList.add("fade-out");
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500);
+  }, 1000); // Reduced from 1500ms to 1000ms for faster loading
+
+  // Content Animation
+  const sections = document.querySelectorAll("section");
+  const portfolioItems = document.querySelectorAll(".portfolio-item");
+  const serviceCards = document.querySelectorAll(".service-card");
+
+  // Function to check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
+  }
+
+  // Function to handle scroll animations
+  function handleScroll() {
+    sections.forEach((section) => {
+      if (isInViewport(section)) {
+        section.classList.add("visible");
+      }
+    });
+
+    portfolioItems.forEach((item) => {
+      if (isInViewport(item)) {
+        item.classList.add("visible");
+      }
+    });
+
+    serviceCards.forEach((card) => {
+      if (isInViewport(card)) {
+        card.classList.add("visible");
+      }
+    });
+  }
+
+  // Initial check
+  handleScroll();
+
+  // Add scroll event listener
+  window.addEventListener("scroll", handleScroll);
+});
+
+// Back to Top Button
+const backToTop = document.querySelector(".back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 300) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
