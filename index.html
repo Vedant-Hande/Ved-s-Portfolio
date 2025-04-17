@@ -365,8 +365,21 @@
         <p>&copy; 2024 Vedant Hande. All rights reserved &heartsuit;</p>
       </div>
     </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+      <svg
+        class="arrow-up"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
     <script src="script.js"></script>
     <script>
+      // Loading Animation
       window.addEventListener("load", function () {
         const loader = document.querySelector(".loader");
         setTimeout(() => {
@@ -374,8 +387,70 @@
           setTimeout(() => {
             loader.style.display = "none";
           }, 500);
-        }, 1500); // Adjust this value to change how long the loader stays visible
+        }, 1000); // Reduced from 1500ms to 1000ms for faster loading
+
+        // Content Animation
+        const sections = document.querySelectorAll("section");
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
+        const serviceCards = document.querySelectorAll(".service-card");
+
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top <=
+              (window.innerHeight || document.documentElement.clientHeight) *
+                0.8 && rect.bottom >= 0
+          );
+        }
+
+        // Function to handle scroll animations
+        function handleScroll() {
+          sections.forEach((section) => {
+            if (isInViewport(section)) {
+              section.classList.add("visible");
+            }
+          });
+
+          portfolioItems.forEach((item) => {
+            if (isInViewport(item)) {
+              item.classList.add("visible");
+            }
+          });
+
+          serviceCards.forEach((card) => {
+            if (isInViewport(card)) {
+              card.classList.add("visible");
+            }
+          });
+        }
+
+        // Initial check
+        handleScroll();
+
+        // Add scroll event listener
+        window.addEventListener("scroll", handleScroll);
       });
+
+      // Back to Top Button
+      const backToTop = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Existing theme toggle code...
     </script>
   </body>
 </html>
