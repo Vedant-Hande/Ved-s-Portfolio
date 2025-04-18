@@ -54,8 +54,24 @@
             <a href="#contact"><i class="fas fa-comments"></i> Let's Talk</a>
           </li>
         </ul>
+        <!-- Hamburger menu button for mobile -->
+        <button class="hamburger" aria-label="Open navigation" aria-controls="nav-drawer" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </nav>
+
+    <div id="nav-drawer" class="nav-drawer" aria-hidden="true">
+      <ul class="nav-links-drawer">
+        <li><a href="#hero"><i class="fas fa-home"></i> Welcome</a></li>
+        <li><a href="#about"><i class="fas fa-user-astronaut"></i> Journey</a></li>
+        <li><a href="#services"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="#portfolio"><i class="fas fa-rocket"></i> Creations</a></li>
+        <li><a href="#contact"><i class="fas fa-comments"></i> Let's Talk</a></li>
+      </ul>
+    </div>
 
     <section id="hero">
       <div class="container">
@@ -73,6 +89,12 @@
         <div class="hero-image">
           <img src="IMG/1.jpg" alt="Vedant Hande" />
         </div>
+      </div>
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </section>
 
