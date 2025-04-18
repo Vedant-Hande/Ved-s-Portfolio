@@ -158,7 +158,7 @@ buttons.forEach(btn => {
     ripple.style.left = e.offsetX + 'px';
     ripple.style.top = e.offsetY + 'px';
     btn.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 600);
+    setTimeout(() => ripple.remove(), 500);
   });
 });
 
