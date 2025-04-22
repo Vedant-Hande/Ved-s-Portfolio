@@ -24,6 +24,10 @@
     </script>
   </head>
   <body>
+    <!-- Interactive Background Elements -->
+    <canvas id="background-canvas" class="background-canvas"></canvas>
+    <div class="geometric-background" id="geometric-background"></div>
+    
     <div class="loader">
       <div class="loader-content">
         <div class="loader-logo">V E D A N T</div>
@@ -32,6 +36,10 @@
           <div class="spinner-circle"></div>
           <div class="spinner-circle"></div>
         </div>
+        <div class="spinner-progress">
+          <div class="spinner-progress-bar"></div>
+        </div>
+        <div class="loader-message">Loading your experience...</div>
       </div>
     </div>
     <nav class="navbar">
@@ -43,6 +51,12 @@
           </li>
           <li>
             <a href="#about"><i class="fas fa-user-astronaut"></i> Journey</a>
+          </li>
+          <li>
+            <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
+          </li>
+          <li>
+            <a href="#open-to-work"><i class="fas fa-bullhorn"></i>Work</a>
           </li>
           <li>
             <a href="#services"><i class="fas fa-code"></i> Skills</a>
@@ -67,6 +81,8 @@
       <ul class="nav-links-drawer">
         <li><a href="#hero"><i class="fas fa-home"></i> Welcome</a></li>
         <li><a href="#about"><i class="fas fa-user-astronaut"></i> Journey</a></li>
+        <li><a href="#resume"><i class="fas fa-file-alt"></i> Resume</a></li>
+        <li><a href="#open-to-work"><i class="fas fa-bullhorn"></i>  Work</a></li>
         <li><a href="#services"><i class="fas fa-code"></i> Skills</a></li>
         <li><a href="#portfolio"><i class="fas fa-rocket"></i> Creations</a></li>
         <li><a href="#contact"><i class="fas fa-comments"></i> Let's Talk</a></li>
@@ -101,10 +117,15 @@
     <section id="about">
       <div class="container">
         <div class="about-image">
-          <img src="IMG/python.png" alt="About Vedant" />
+          <img src="IMG/Q-game.png" alt="About Vedant" />
+          <div class="shine-effect"></div>
+          <div class="accent-dot"></div>
+          <div class="accent-dot"></div>
+          <div class="accent-dot"></div>
+          <div class="accent-dot"></div>
         </div>
         <div class="about-content">
-          <h2>Let me introduce myself :)</h2>
+          <h2>About Me</h2>
           <p>
             &nbsp; &nbsp; &nbsp; Hi! I'm <strong>Vedant Hande</strong> , a
             passionate frontend developer, MERN stack learner, and a final-year
@@ -141,6 +162,192 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="resume">
+      <h2>Resume Highlights</h2>
+      <div class="container">
+        <div class="resume-grid">
+          <div class="resume-col">
+            <div class="resume-card education">
+              <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+              <div class="resume-item">
+                <h4>TY Diploma (pursuing) Information Technology </h4>
+                <h5>Amrutvahini Polytechnic | 2024 - 2025</h5>
+                <p> Pursuing diploma with focus on web development, programming fundamentals, and database management systems.</p>
+              </div>
+              <div class="resume-item">
+                <h4>SY Diploma | 83.06% </h4>
+                <h5>Amrutvahini Polytechnic | 2023 - 2024</h5>
+                <p>Completed diploma with focus on web development, programming fundamentals, and database management systems.</p>
+              </div>
+              <div class="resume-item">
+                <h4>FY Diploma | 86.94% </h4>
+                <h5>Amrutvahini Polytechnic | 2022 - 2023</h5>
+                <p> Completed diploma with focus on web development, programming fundamentals, and database management systems.</p>
+              </div>
+              <div class="resume-item">
+                <h4>10th (SSC)  | 86.70% </h4>
+                <h5>Adarsh English School , Wadgaon Landga. | 2022 
+                </h5>
+                <p>Completed 10th with focus on basic subjects. </p>
+              </div>
+            </div>
+            
+            <div class="resume-card skills">
+              <h3><i class="fas fa-code"></i> Technical Skills</h3>
+              <ul class="skill-list">
+                <li>
+                  <span>HTML/CSS</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                  </div>
+                </li>
+                <li>
+                  <span>JavaScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                  </div>
+                </li>
+                <li>
+                  <span>React.js</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                  </div>
+                </li>
+                <li>
+                  <span>Node.js</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
+                  </div>
+                </li>
+                <li>
+                  <span>MongoDB</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 65%"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="resume-col">
+            <div class="resume-card experience">
+              <h3><i class="fas fa-briefcase"></i> Experience</h3>
+              <div class="resume-item">
+                <h4>Internship</h4>
+                <h5> Ex- Intern @Innovatus Technology Pune (Mar ‘20 - Jun ‘11)</h5>
+                <p> Developed "Automatic Question Paper Generation System" - Java , Python. </p>
+              </div>
+              <div class="resume-item">
+                <h4>Participation</h4>
+                <h5> DIPEX-2025 Idea Presentation Round - Participated | Team Leader (Mar ‘16 )</h5>
+                <p>Led a team in a State level Exhibition Competition on our Project VAN RAKSHAK ,
+                  organized by SRIJAN in association with COEP Technological University, Pune.</p>
+              </div>
+              
+            </div>
+            
+            <div class="resume-card">
+              <h3><i class="fas fa-certificate"></i> Certifications</h3>
+              <div class="resume-item">
+                <h4>Internship certificate | @Innovatus Technology Pune 2023 </h4>
+                <h5>Certifications of Inplant Training completed with good marks and skills </h5>
+                <button type="button" class="btn btn-primary view-certificate" >view certificate</button>
+              </div>
+              <div class="resume-item">
+                <h4>Complete IOT Training | @Amrutvahini Polytechnic   2024</h4>
+                <h5> Certificate of Completion IOT Training with great knowledge and skills </h5>
+                <button type="button" class="btn btn-primary view-certificate" >view certificate</button>
+              </div>
+              <div class="resume-item">
+                <h4>Participated in State Level Idea Presentation Round | DIPEX-2025</h4>
+                <h5>DIPEX-2025 Idea Presentation Round - Participated </h5>
+                <button type="button" class="btn btn-primary view-certificate" >view certificate</button>
+              </div>
+              <div class="resume-item">
+                <h4>Participated in State Level Project Expo | Pravara-Techofest-2025</h4>
+                <h5> Pravara-Techofest-2025 Project Expo - Participated </h5>
+                <button type="button" class="btn btn-primary view-certificate" >view certificate</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="open-to-work">
+      <div class="container">
+        <div class="open-to-work-content">
+          <div class="open-to-work-badge">
+            <div class="badge-circle">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <span>Open to Work</span>
+          </div>
+          
+          <h2>I'm Currently Available for Opportunities</h2>
+          
+          <div class="open-to-work-text">
+            <p>
+              I'm actively seeking new opportunities in frontend and full-stack development where I can contribute my skills and grow as a developer. Currently open to:
+            </p>
+            
+            <div class="opportunity-types">
+              <div class="opportunity-item">
+                <div class="opportunity-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="opportunity-details">
+                  <h3>part -time Positions</h3>
+                  <p>Looking for entry-level to junior roles where I can apply my skills and continue learning.</p>
+                </div>
+              </div>
+              
+              <div class="opportunity-item">
+                <div class="opportunity-icon">
+                  <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="opportunity-details">
+                  <h3>Freelance Projects</h3>
+                  <p>Available for short to medium-term projects in web development and UI/UX implementation.</p>
+                </div>
+              </div>
+              
+              <div class="opportunity-item">
+                <div class="opportunity-icon">
+                  <i class="fas fa-hands-helping"></i>
+                </div>
+                <div class="opportunity-details">
+                  <h3>Collaborations</h3>
+                  <p>Interested in collaborating on open-source projects or innovative web applications.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="availability-info">
+              <div class="availability-item">
+                <i class="fas fa-calendar-check"></i>
+                <span>Available: 24/7</span>
+              </div>
+              <div class="availability-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Location:Remote | On-site</span>
+              </div>
+              <div class="availability-item">
+                <i class="fas fa-clock"></i>
+                <span>Working Hours: Flexible </span>
+              </div>
+            </div>
+            
+            <a href="#contact" class="btn contact-btn btn-primary ">
+              <i class="fas fa-paper-plane "></i> Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="open-to-work-bg"></div>
     </section>
 
     <section id="services">
