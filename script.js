@@ -1039,8 +1039,82 @@ function setupOptimizedScrollAnimations() {
   }
 }
 
-// Initialize responsive enhancements when DOM is loaded
+// Initialize and animate GitHub calendar section
+function setupGitHubCalendar() {
+  const githubSection = document.getElementById("github-contributions");
+  if (!githubSection) return;
+
+  const calendarWrapper = document.querySelector(".github-calendar-wrapper");
+  const loadingElement = document.querySelector(".github-calendar-loading");
+
+  // Create observer for animation when scrolled into view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          calendarWrapper.style.opacity = "1";
+          calendarWrapper.style.transform = "translateY(0)";
+
+          // Hide loading message after calendar appears
+          setTimeout(() => {
+            if (loadingElement) {
+              loadingElement.style.display = "none";
+            }
+          }, 1500);
+
+          // Once animated, no need to observe anymore
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  // Set initial state for animation
+  calendarWrapper.style.opacity = "0";
+  calendarWrapper.style.transform = "translateY(30px)";
+  calendarWrapper.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+
+  // Start observing
+  observer.observe(githubSection);
+
+  // Handle GitHub API rate limit issues
+  window.addEventListener(
+    "error",
+    function (e) {
+      if (
+        e.target.tagName.toLowerCase() === "img" &&
+        e.target.src.includes("github-calendar")
+      ) {
+        loadingElement.innerHTML = `
+        <i class="fas fa-exclamation-triangle"></i> 
+        Could not load GitHub contributions. Please try again later.
+      `;
+        loadingElement.style.color = "var(--primary-color)";
+        loadingElement.style.display = "block";
+      }
+    },
+    true
+  );
+}
+
+// Call all setup functions when document is ready
 document.addEventListener("DOMContentLoaded", function () {
+  setupTypingEffect();
+  setupParallaxEffect();
+  createParticles();
+  setupEnhancedScrollAnimations();
+  setupAboutImage3DEffect();
+  setupInteractiveBackground();
+  createFloatingElements();
+  createGeometricShapes();
+  createCursorTrails();
+  setupLazyLoading();
+  setupResponsiveNavigation();
+  highlightNavLinks();
   enhanceResponsiveness();
+  setupResponsiveBackground();
+  adjustResponsiveElements();
   setupOptimizedScrollAnimations();
+  setupGitHubCalendar(); // Add GitHub calendar setup
 });

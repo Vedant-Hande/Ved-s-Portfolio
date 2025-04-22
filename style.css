@@ -2933,3 +2933,235 @@ canvas {
   font-weight: 600;
   width: 500px;
 }
+
+/* GitHub Contributions Section */
+#github-contributions {
+  background-color: var(--light-bg-color);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#github-contributions h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.github-calendar-wrapper {
+  background-color: var(--card-bg-color);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github-calendar-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.github-calendar-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.github-stats {
+  flex: 1;
+  min-width: 300px;
+}
+
+.github-stats p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.github-calendar-loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+
+.github-calendar-loading i {
+  margin-right: 10px;
+}
+
+/* Calendar styling overrides */
+.calendar {
+  width: 100%;
+  overflow: auto;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Style adjustments for GitHub Calendar */
+.js-calendar-graph-svg {
+  width: 100%;
+}
+
+/* Custom styles for calendar tooltips */
+.svg-tip {
+  background-color: var(--primary-color) !important;
+  border-radius: 6px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.svg-tip:after {
+  border-top-color: var(--primary-color) !important;
+}
+
+/* Accent elements */
+#github-contributions::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgba(var(--primary-rgb), 0.1),
+    rgba(var(--primary-rgb), 0)
+  );
+  z-index: 0;
+}
+
+#github-contributions::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgba(var(--secondary-rgb), 0.1),
+    rgba(var(--secondary-rgb), 0)
+  );
+  z-index: 0;
+}
+
+/* Responsive styles for GitHub Calendar */
+@media (max-width: 768px) {
+  .github-calendar-wrapper {
+    padding: 15px;
+  }
+
+  .github-calendar-info {
+    flex-direction: column;
+  }
+
+  .github-stats,
+  .github-calendar-wrapper .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .calendar {
+    overflow-x: scroll;
+  }
+}
+/* ... existing code ... */
+
+/* GitHub Stats Counters */
+.github-stats-counters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.github-stat-counter {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 150px;
+  flex: 1;
+}
+
+.github-stat-counter:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.counter-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(var(--primary-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: var(--primary-color);
+  font-size: 18px;
+}
+
+.counter-info {
+  flex: 1;
+}
+
+.counter-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  color: var(--heading-color);
+}
+
+.counter-info p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Responsive styles for GitHub stats counters */
+@media (max-width: 768px) {
+  .github-stats-counters {
+    justify-content: center;
+  }
+  
+  .github-stat-counter {
+    min-width: 120px;
+    padding: 10px;
+  }
+  
+  .counter-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .counter-value {
+    font-size: 20px;
+  }
+  
+  .counter-info p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .github-stats-counters {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

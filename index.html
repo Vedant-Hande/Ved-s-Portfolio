@@ -15,6 +15,8 @@
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+    <!-- GitHub Calendar CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
@@ -65,6 +67,9 @@
             <a href="#portfolio"><i class="fas fa-rocket"></i> Creations</a>
           </li>
           <li>
+            <a href="#github-contributions"><i class="fab fa-github"></i> GitHub</a>
+          </li>
+          <li>
             <a href="#contact"><i class="fas fa-comments"></i> Let's Talk</a>
           </li>
         </ul>
@@ -85,6 +90,7 @@
         <li><a href="#open-to-work"><i class="fas fa-bullhorn"></i>  Work</a></li>
         <li><a href="#services"><i class="fas fa-code"></i> Skills</a></li>
         <li><a href="#portfolio"><i class="fas fa-rocket"></i> Creations</a></li>
+        <li><a href="#github-contributions"><i class="fab fa-github"></i> GitHub</a></li>
         <li><a href="#contact"><i class="fas fa-comments"></i> Let's Talk</a></li>
       </ul>
     </div>
@@ -236,12 +242,12 @@
               <h3><i class="fas fa-briefcase"></i> Experience</h3>
               <div class="resume-item">
                 <h4>Internship</h4>
-                <h5> Ex- Intern @Innovatus Technology Pune (Mar ‘20 - Jun ‘11)</h5>
+                <h5> Ex- Intern @Innovatus Technology Pune (Mar '20 - Jun '11)</h5>
                 <p> Developed "Automatic Question Paper Generation System" - Java , Python. </p>
               </div>
               <div class="resume-item">
                 <h4>Participation</h4>
-                <h5> DIPEX-2025 Idea Presentation Round - Participated | Team Leader (Mar ‘16 )</h5>
+                <h5> DIPEX-2025 Idea Presentation Round - Participated | Team Leader (Mar '16 )</h5>
                 <p>Led a team in a State level Exhibition Competition on our Project VAN RAKSHAK ,
                   organized by SRIJAN in association with COEP Technological University, Pune.</p>
               </div>
@@ -548,6 +554,62 @@
       </div>
     </section>
 
+    <!-- GitHub Contributions Section -->
+    <section id="github-contributions">
+      <h2>My GitHub Contributions</h2>
+      <div class="container">
+        <div class="github-calendar-wrapper">
+          <div class="github-calendar-info">
+            <div class="github-stats">
+              <p>Check out my GitHub activity! The contribution graph below shows my coding activity over time. Each green square represents days when I committed code to public repositories.</p>
+              
+              <!-- GitHub Stats Counters -->
+              <div class="github-stats-counters">
+                <div class="github-stat-counter">
+                  <div class="counter-icon">
+                    <i class="fas fa-code-branch"></i>
+                  </div>
+                  <div class="counter-info">
+                    <h4 class="counter-value">550+</h4>
+                    <p>Contributions</p>
+                  </div>
+                </div>
+                <div class="github-stat-counter">
+                  <div class="counter-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div class="counter-info">
+                    <h4 class="counter-value">6+</h4>
+                    <p>Repositories</p>
+                  </div>
+                </div>
+                <div class="github-stat-counter">
+                  <div class="counter-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="counter-info">
+                    <h4 class="counter-value">100+</h4>
+                    <p>Commits</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="https://github.com/Vedant-Hande" target="_blank" class="btn">
+              <i class="fab fa-github"></i> View My GitHub Profile
+            </a>
+          </div>
+          <!-- Loading placeholder -->
+          <div class="github-calendar-loading">
+            <i class="fas fa-spinner fa-spin"></i> Loading contribution data...
+          </div>
+          <!-- GitHub calendar will be loaded here -->
+          <div class="calendar">
+            <!-- GitHub calendar gets inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <section>
         <section class="contact-section" id="contact">
@@ -607,6 +669,19 @@
     </button>
 
     <script src="script.js"></script>
-    <script></script>
+    <!-- GitHub Calendar JavaScript -->
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <script>
+      // Initialize GitHub Calendar
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for the page to fully load before initializing GitHub Calendar
+        setTimeout(function() {
+          GitHubCalendar(".calendar", "Vedant-Hande", { 
+            responsive: true,
+            tooltips: true 
+          });
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
