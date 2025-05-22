@@ -1841,7 +1841,7 @@ html {
   position: absolute;
   background-color: rgba(169, 183, 15, 0.3);
   border-radius: 50%;
-  pointer-events:none;
+  pointer-events: none;
 }
 
 @keyframes float-particle {
@@ -3150,5 +3150,161 @@ canvas {
   .github-stats-counters {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+/* Modern Technical Skills Section */
+#skills-modern {
+  padding: 60px 0 40px 0;
+  background: var(--section-bg);
+}
+.skills-title {
+  text-align: center;
+  font-size: 2.3rem;
+  color: var(--text-main);
+  margin-bottom: 36px;
+  letter-spacing: 1px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-items: center;
+}
+.skill-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 18px 22px 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(105, 129, 141, 0.18);
+  border-color: var(--accent);
+}
+.skill-card i {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+.skill-card:hover i {
+  color: var(--text-main);
+}
+.skill-card span {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 600px) {
+  #skills-modern {
+    padding: 40px 0 20px 0;
+  }
+  .skills-title {
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+  }
+  .skills-grid {
+    gap: 18px;
+  }
+  .skill-card {
+    padding: 20px 8px 14px 8px;
+  }
+  .skill-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .skill-card span {
+    font-size: 1rem;
+  }
+}
+/* End Modern Technical Skills Section */
+
+/* Modern Certifications Row Layout */
+.resume-card.certifications {
+  padding: 24px 18px 18px 18px;
+}
+.resume-card.certifications .certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+}
+.resume-card.certifications .resume-item {
+  flex: 1 1 220px;
+  min-width: 180px;
+  max-width: 260px;
+  background: var(--primary-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  margin-bottom: 0;
+  padding: 14px 12px 10px 12px;
+  border: 1px solid var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.resume-card.certifications .resume-item h4 {
+  font-size: 1.01rem;
+  margin-bottom: 2px;
+  color: var(--accent);
+}
+.resume-card.certifications .resume-item h5 {
+  font-size: 0.93rem;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+.resume-card.certifications .resume-item button {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+@media (max-width: 700px) {
+  .resume-card.certifications .certifications-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .resume-card.certifications .resume-item {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+/* End Modern Certifications Row Layout */
+
+/* Certifications section full width */
+.resume-card.certifications {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+}
+.resume-card.certifications .certifications-list {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  justify-content: stretch;
+}
+.resume-card.certifications .resume-item {
+  flex: 1 1 220px;
+  min-width: 180px;
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  .resume-card.certifications {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .resume-card.certifications .certifications-list {
+    width: 100%;
   }
 }
