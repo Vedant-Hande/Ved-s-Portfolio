@@ -853,7 +853,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setupResponsiveNavigation();
 });
 
-// Highlight active nav link (desktop & mobile)
+// Highlight active nav link 
 function highlightNavLinks() {
   const sections = document.querySelectorAll("section");
   let scrollPos = window.scrollY || window.pageYOffset;
@@ -914,13 +914,10 @@ backToTop.addEventListener("click", () => {
 function enhanceResponsiveness() {
   // Set up responsive navigation
   setupResponsiveNavigation();
-
   // Set up responsive background
   setupResponsiveBackground();
-
   // Set up lazy loading images
   setupLazyLoading();
-
   // Add throttled resize handler
   window.addEventListener(
     "resize",

@@ -1746,19 +1746,6 @@ html {
   box-shadow: 0 0 8px rgba(169, 183, 15, 0.4);
 }
 
-.skill-progress::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 5px;
-  background: #fff;
-  border-radius: 5px;
-  opacity: 0.8;
-  filter: blur(3px);
-}
-
 /* Resume download button */
 .resume-download-btn {
   display: inline-block;
@@ -1821,7 +1808,7 @@ html {
   width: 3px;
   background-color: #a9b70f;
   margin-left: 2px;
-  animation: none;
+  animation: ease-in-out;
 }
 
 .cursor.blink {
@@ -1854,7 +1841,7 @@ html {
   position: absolute;
   background-color: rgba(169, 183, 15, 0.3);
   border-radius: 50%;
-  pointer-events: none;
+  pointer-events:none;
 }
 
 @keyframes float-particle {
@@ -3137,23 +3124,23 @@ canvas {
   .github-stats-counters {
     justify-content: center;
   }
-  
+
   .github-stat-counter {
     min-width: 120px;
     padding: 10px;
   }
-  
+
   .counter-icon {
     width: 35px;
     height: 35px;
     font-size: 16px;
     margin-right: 10px;
   }
-  
+
   .counter-value {
     font-size: 20px;
   }
-  
+
   .counter-info p {
     font-size: 12px;
   }
