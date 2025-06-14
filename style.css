@@ -234,7 +234,9 @@ body {
   display: inline-block;
   background-color: #a9b70f;
   color: #121212;
-  padding: 12px 30px;
+  padding: 0px 18px;
+  justify-content: center;
+  padding-top: 10px;
   text-decoration: none;
   border-radius: 12px;
   font-weight: bold;
@@ -971,8 +973,6 @@ body {
   /* Increase tap target sizes for mobile */
   .portfolio-item a,
   .btn {
-    padding: 12px 18px;
-    min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2451,6 +2451,8 @@ canvas {
   .hamburger {
     width: 36px;
     height: 36px;
+    margin-left: 240px;
+    margin-top: -32px;
   }
 
   .hamburger .bar {
