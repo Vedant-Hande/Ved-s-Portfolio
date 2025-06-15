@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vedant's Portfolio Website
 
 A modern, responsive portfolio website showcasing my skills, projects, and professional journey as a frontend developer.
@@ -111,3 +112,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 Made with ❤️ by Vedant Hande
+=======
+
+>>>>>>> 922b2f8ffe0a5fdb74209df8aba4a56f4b803b6d
