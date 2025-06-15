@@ -853,7 +853,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setupResponsiveNavigation();
 });
 
-// Highlight active nav link 
+// Highlight active nav link
 function highlightNavLinks() {
   const sections = document.querySelectorAll("section");
   let scrollPos = window.scrollY || window.pageYOffset;

@@ -1924,6 +1924,7 @@ section:not(#hero)::before {
   opacity: 0;
   transition: opacity 0.4s;
   z-index: -1;
+  margin: 20px;
 }
 
 .resume-card:hover::before,
