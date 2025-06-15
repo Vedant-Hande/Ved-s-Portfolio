@@ -1,1 +1,1 @@
-## Hi! I'm Vedant Hande , a passionate frontend developer, MERN stack learner, and a final-year Information Technology student at Amrutvahini Polytechnic. I am eager to apply my skills in a professional environment. I'm seeking a challenging entry-level role where I can contribute to innovative projects, expand my knowledge of modern web development practices, and collaborate with experienced engineers. I'm particularly interested in opportunities that foster growth, encourage learning, and value creative problem-solving.
+
