@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Vedant's Portfolio Website
 
 A modern, responsive portfolio website showcasing my skills, projects, and professional journey as a frontend developer.
@@ -64,9 +63,6 @@ A modern, responsive portfolio website showcasing my skills, projects, and profe
 3. Open `index.html` in your browser or use a local server:
 
    ```bash
-   # Using Python
-   python -m http.server 8000
-
    # Using Node.js
    npx serve
    ```
@@ -114,4 +110,3 @@ This project is open source and available under the [MIT License](LICENSE).
 Made with ❤️ by Vedant Hande
 =======
 
->>>>>>> 922b2f8ffe0a5fdb74209df8aba4a56f4b803b6d
