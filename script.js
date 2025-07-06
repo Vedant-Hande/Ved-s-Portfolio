@@ -35,7 +35,8 @@ function setupTypingEffect() {
   const heroHeading = document.querySelector("#hero h1");
   if (!heroHeading) return;
 
-  const originalText = heroHeading.textContent;
+  // Use the original text as a single string (no line breaks or HTML)
+  const originalText = "Hello, I'm a Frontend Developer...";
   heroHeading.innerHTML = "";
 
   let i = 0;
@@ -43,6 +44,7 @@ function setupTypingEffect() {
 
   function typeWriter() {
     if (i < originalText.length) {
+      // Add one character at a time
       heroHeading.innerHTML += originalText.charAt(i);
       i++;
       setTimeout(typeWriter, typingSpeed);
@@ -63,7 +65,7 @@ function setupTypingEffect() {
   }
 
   // Start the typing effect after a short delay
-  setTimeout(typeWriter, 1000);
+  setTimeout(typeWriter, 500);
 }
 
 // Add subtle parallax effect
@@ -626,9 +628,11 @@ function throttle(func, limit) {
 
 // Setup responsive navigation
 function setupResponsiveNavigation() {
+  console.log("setupResponsiveNavigation called");
   const hamburger = document.querySelector(".hamburger");
   const navDrawer = document.getElementById("nav-drawer");
   const navLinks = document.querySelectorAll(".nav-links-drawer a");
+  console.log("hamburger:", hamburger, "navDrawer:", navDrawer);
 
   if (hamburger && navDrawer) {
     // Toggle nav drawer
@@ -667,6 +671,7 @@ window.addEventListener("load", function () {
   const progressBar = document.querySelector(".spinner-progress-bar");
   const loaderLogo = document.querySelector(".loader-logo");
   const loaderMessage = document.querySelector(".loader-message");
+  const spinner = document.querySelector(".loader-spinner");
 
   // Array of loading messages
   const loadingMessages = [
@@ -676,60 +681,64 @@ window.addEventListener("load", function () {
     "Almost ready...",
   ];
 
-  // Simulate loading progress - faster on mobile
-  const progressSpeed = isMobile() ? 15 : 10;
+  // Simulate loading progress - much faster
+  const progressSpeed = 30;
   let progress = 0;
-  const progressInterval = setInterval(
-    () => {
-      if (progress >= 100) {
-        clearInterval(progressInterval);
-        return;
-      }
+  const progressInterval = setInterval(() => {
+    if (progress >= 100) {
+      clearInterval(progressInterval);
+      return;
+    }
 
-      progress += Math.random() * progressSpeed;
-      if (progress > 100) progress = 100;
+    progress += Math.random() * progressSpeed;
+    if (progress > 100) progress = 100;
 
-      if (progressBar) {
-        progressBar.style.width = `${progress}%`;
-      }
+    if (progressBar) {
+      progressBar.style.width = `${progress}%`;
+    }
 
-      // Update loading message at certain progress points
-      if (progress > 25 && progress < 30 && loaderMessage) {
-        loaderMessage.style.opacity = 0;
-        setTimeout(() => {
-          loaderMessage.textContent = loadingMessages[1];
-          loaderMessage.style.opacity = 1;
-        }, 300);
-      } else if (progress > 50 && progress < 55 && loaderMessage) {
-        loaderMessage.style.opacity = 0;
-        setTimeout(() => {
-          loaderMessage.textContent = loadingMessages[2];
-          loaderMessage.style.opacity = 1;
-        }, 300);
-      } else if (progress > 80 && progress < 85 && loaderMessage) {
-        loaderMessage.style.opacity = 0;
-        setTimeout(() => {
-          loaderMessage.textContent = loadingMessages[3];
-          loaderMessage.style.opacity = 1;
-        }, 300);
-      }
-    },
-    isMobile() ? 100 : 150
-  );
+    // Update loading message at certain progress points
+    if (progress > 25 && progress < 30 && loaderMessage) {
+      loaderMessage.style.opacity = 0;
+      setTimeout(() => {
+        loaderMessage.textContent = loadingMessages[1];
+        loaderMessage.style.opacity = 1;
+      }, 200);
+    } else if (progress > 50 && progress < 55 && loaderMessage) {
+      loaderMessage.style.opacity = 0;
+      setTimeout(() => {
+        loaderMessage.textContent = loadingMessages[2];
+        loaderMessage.style.opacity = 1;
+      }, 200);
+    } else if (progress > 80 && progress < 85 && loaderMessage) {
+      loaderMessage.style.opacity = 0;
+      setTimeout(() => {
+        loaderMessage.textContent = loadingMessages[3];
+        loaderMessage.style.opacity = 1;
+      }, 200);
+    }
+  }, 40);
 
-  // Add subtle animation to logo
+  // Add interactive spinner animation
+  if (spinner) {
+    spinner.style.animation = "spin 1s linear infinite";
+    spinner.style.filter = "drop-shadow(0 0 8px #a9b70f)";
+  }
+
+  // Add color pulse to loader logo
   if (loaderLogo) {
     loaderLogo.addEventListener("mouseenter", function () {
-      loaderLogo.style.transform = "scale(1.1)";
-    });
-
-    loaderLogo.addEventListener("mouseleave", function () {
-      loaderLogo.style.transform = "scale(1)";
+      loaderLogo.style.animation = "bounce 0.5s";
+      loaderLogo.style.color = "#e0e722";
+      setTimeout(() => {
+        loaderLogo.style.animation = "";
+        loaderLogo.style.color = "";
+      }, 500);
     });
   }
 
-  // Fade out loader after content is loaded - faster on mobile
-  const loaderDuration = isMobile() ? 1800 : 2500;
+  // Fade out loader after content is loaded - much faster
+  const loaderDuration = 800;
 
   setTimeout(() => {
     if (progressBar) {
@@ -781,9 +790,23 @@ window.addEventListener("load", function () {
             }
           }, 200)
         );
-      }, 600);
-    }, 500);
+      }, 400);
+    }, 200);
   }, loaderDuration);
+
+  // Add keyframes for spin and bounce
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+  `;
+  document.head.appendChild(style);
 
   // Content Animation with throttled scroll for better performance
   const sections = document.querySelectorAll("section");
