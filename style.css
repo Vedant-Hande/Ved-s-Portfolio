@@ -3561,3 +3561,23 @@ canvas {
   filter: saturate(1.18) brightness(1.09) drop-shadow(0 6px 24px #a9b70f44);
   border-radius: 60% 40% 40% 60% / 60% 30% 70% 40%;
 }
+
+/* --- FIX: Allow scrolling on mobile devices --- */
+@media (max-width: 900px) {
+  html,
+  body {
+    height: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* But when hidden, allow scroll */
+  }
+  .loader.fade-out {
+    display: none !important;
+  }
+}
