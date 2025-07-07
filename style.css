@@ -294,10 +294,26 @@ body {
 #hero .hero-content h1 {
   font-family: "Syne", sans-serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 20px;
   letter-spacing: 1px;
   margin-top: -10px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: heroH1FadeIn 1.2s cubic-bezier(0.77, 0, 0.18, 1) 0.2s forwards;
+}
+@keyframes heroH1FadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #hero .hero-content h1 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 #hero .hero-content p {
@@ -312,7 +328,6 @@ body {
   display: inline-block;
   background-color: #a9b70f;
   color: #121212;
-  padding: 0px 18px;
   justify-content: center;
   padding-top: 10px;
   text-decoration: none;
@@ -1333,7 +1348,9 @@ html {
   align-items: center;
   z-index: 9999;
   overflow: hidden;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0.6s;
+  transition: opacity 0.6s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 0.8s cubic-bezier(0.77, 0, 0.18, 1),
+    visibility 0.8s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
 .loader::before {
@@ -1520,7 +1537,7 @@ html {
 
 .loader.fade-out {
   opacity: 0;
-  transform: scale(1.1);
+  transform: scale(1.08);
   pointer-events: none;
   visibility: hidden;
 }
@@ -1533,7 +1550,8 @@ html {
 #contact {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 0.8s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
 #hero.visible,
@@ -1542,31 +1560,68 @@ html {
 #portfolio.visible,
 #contact.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* Portfolio Item Animations */
 .portfolio-item {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 0.8s cubic-bezier(0.77, 0, 0.18, 1);
 }
-
 .portfolio-item.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered animation delays for portfolio/service cards */
+.portfolio-item {
+  transition-delay: 0.1s;
+}
+.portfolio-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.portfolio-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.portfolio-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.portfolio-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.portfolio-item:nth-child(6) {
+  transition-delay: 0.6s;
 }
 
 /* Service Card Animations */
 .service-card {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 0.8s cubic-bezier(0.77, 0, 0.18, 1);
 }
-
 .service-card.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered animation delays for portfolio/service cards */
+.service-card {
+  transition-delay: 0.1s;
+}
+.service-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.service-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.service-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.service-card:nth-child(5) {
+  transition-delay: 0.5s;
 }
 
 /* Back to Top Button */
@@ -1964,14 +2019,15 @@ section:not(#hero)::before {
 /* Image hover styles */
 #hero .hero-image img,
 #about .about-image img {
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    filter 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   filter: saturate(0.9) brightness(0.95);
 }
 
 #hero .hero-image img:hover,
 #about .about-image img:hover {
-  filter: saturate(1.1) brightness(1.05);
-  transform: scale(1.03) rotate(-2deg);
+  transform: scale(1.07) rotate(-2deg);
+  filter: saturate(1.2) brightness(1.08) drop-shadow(0 4px 16px #a9b70f44);
 }
 
 /* Enhanced card styles */
@@ -2594,19 +2650,44 @@ canvas {
 
 @media (max-width: 600px) {
   #hero {
-    padding: 80px 0 50px;
+    padding: 80px 0 30px; /* Increased top padding for navbar clearance */
   }
-
   #hero .hero-content h1 {
-    font-size: 2.2rem;
+    margin-top: 38px; /* Extra margin to ensure visibility below navbar */
   }
-
+  #hero .container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 6px;
+  }
+  #hero .hero-content {
+    text-align: center;
+    padding: 0 2vw;
+  }
+  #hero .hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .hero-tagline {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
   #hero .hero-content p {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    margin-bottom: 18px;
   }
-
-  .hero-image {
+  #hero .hero-content .btn {
+    min-width: 100px;
+    font-size: 1rem;
+    padding: 10px 18px;
+    border-radius: 10px;
+  }
+  #hero .hero-image {
     display: none;
+  }
+  .scroll-indicator {
+    bottom: 10px;
   }
 }
 
@@ -3467,4 +3548,16 @@ canvas {
     opacity: 1;
     transform: none;
   }
+}
+
+#hero .hero-image img {
+  transition: box-shadow 0.6s cubic-bezier(0.77, 0, 0.18, 1),
+    border-radius 0.6s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 0.7s cubic-bezier(0.77, 0, 0.18, 1),
+    filter 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+}
+#hero .hero-image:hover img {
+  transform: scale(1.09) rotate(-2deg);
+  filter: saturate(1.18) brightness(1.09) drop-shadow(0 6px 24px #a9b70f44);
+  border-radius: 60% 40% 40% 60% / 60% 30% 70% 40%;
 }
