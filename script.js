@@ -30,42 +30,6 @@ document
     );
   });
 
-// Add typing effect for hero section heading
-function setupTypingEffect() {
-  const heroHeading = document.querySelector("#hero h1");
-  if (!heroHeading) return;
-
-  const originalText = heroHeading.textContent;
-  heroHeading.innerHTML = "";
-
-  let i = 0;
-  const typingSpeed = 80; // milliseconds per character
-
-  function typeWriter() {
-    if (i < originalText.length) {
-      heroHeading.innerHTML += originalText.charAt(i);
-      i++;
-      setTimeout(typeWriter, typingSpeed);
-    } else {
-      // Add blinking cursor at the end
-      heroHeading.innerHTML = heroHeading.innerHTML.replace(
-        /<span class="cursor">.*?<\/span>/,
-        ""
-      );
-      heroHeading.innerHTML += '<span class="cursor">|</span>';
-
-      // Add cursor blink class after typing completes
-      setTimeout(() => {
-        const cursor = document.querySelector(".cursor");
-        if (cursor) cursor.classList.add("blink");
-      }, 500);
-    }
-  }
-
-  // Start the typing effect after a short delay
-  setTimeout(typeWriter, 1000);
-}
-
 // Add subtle parallax effect
 function setupParallaxEffect() {
   window.addEventListener("scroll", function () {
@@ -742,45 +706,20 @@ window.addEventListener("load", function () {
         loader.style.display = "none";
 
         // Start page animations after loader disappears
-        setupTypingEffect();
         setupParallaxEffect();
-        createParticles();
         setupEnhancedScrollAnimations();
         setupAboutImage3DEffect();
-        setupInteractiveBackground();
-        createFloatingElements();
-
-        // Only create cursor trails on desktop
-        if (!isMobile() && !isTablet()) {
-          createGeometricShapes();
-          createCursorTrails();
-        }
-
-        // Periodically recreate floating elements for variety
-        setInterval(createFloatingElements, 30000);
-
-        // Responsive resize handler
-        window.addEventListener(
-          "resize",
-          throttle(() => {
-            // Update device type detection
-            const wasMobile = isMobile();
-            const wasTablet = isTablet();
-
-            // Update global variables
-            window.isMobile = window.innerWidth <= 600;
-            window.isTablet =
-              window.innerWidth > 600 && window.innerWidth <= 900;
-
-            // Recreate effects if device type changed
-            if (
-              wasMobile !== window.isMobile ||
-              wasTablet !== window.isTablet
-            ) {
-              createFloatingElements();
-            }
-          }, 200)
-        );
+        // Defer heavy effects:
+        setTimeout(() => {
+          createParticles();
+          setupInteractiveBackground();
+          createFloatingElements();
+          // Only create cursor trails on desktop
+          if (!isMobile() && !isTablet()) {
+            createGeometricShapes();
+            createCursorTrails();
+          }
+        }, 300);
       }, 600);
     }, 500);
   }, loaderDuration);
@@ -1097,9 +1036,7 @@ function setupGitHubCalendar() {
 
 // Call all setup functions when document is ready
 document.addEventListener("DOMContentLoaded", function () {
-  setupTypingEffect();
   setupParallaxEffect();
-  createParticles();
   setupEnhancedScrollAnimations();
   setupAboutImage3DEffect();
   setupInteractiveBackground();
@@ -1114,4 +1051,14 @@ document.addEventListener("DOMContentLoaded", function () {
   adjustResponsiveElements();
   setupOptimizedScrollAnimations();
   setupGitHubCalendar(); // Add GitHub calendar setup
+});
+
+// Navbar scroll effect for interactivity
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 10) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
 });

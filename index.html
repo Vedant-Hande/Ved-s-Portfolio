@@ -128,18 +128,25 @@
     </div>
 
     <section id="hero">
-      <div class="container">
+      <div class="container hero-animate">
         <div class="hero-content">
-          <h1>Hello, I'm a Frontend Developer...</h1>
+          <h1>Hello, I'm Frontend Developer</h1>
+          <div class="hero-tagline">
+            Building modern web experiences with passion
+            <span class="tagline-animated">🚀</span>
+          </div>
           <p>
             Hi, I'm <strong>Vedant Hande</strong>, a passionate frontend
             developer and college student exploring the MERN (MongoDB,
             Express.js, React.js, Node.js) stack. Welcome to my journey of
             learning and building modern web applications!
           </p>
-          <a href="PDF/VEDANT_HANDE_RESUME.pdf" class="btn">View Resume</a>
+          <a href="PDF/VEDANT_HANDE_RESUME.pdf" class="btn"
+            ><i class="fas fa-download"></i> View Resume</a
+          >
         </div>
         <div class="hero-image">
+          <div class="hero-image-bg"></div>
           <img src="IMG/me.jpg" alt="Vedant Hande" />
         </div>
       </div>
@@ -154,7 +161,7 @@
     <section id="about">
       <div class="container">
         <div class="about-image">
-          <img src="IMG/Q-game.png" alt="About Vedant" />
+          <img src="IMG/Q-game.png" alt="About Vedant" loading="lazy" />
           <div class="shine-effect"></div>
           <div class="accent-dot"></div>
           <div class="accent-dot"></div>
@@ -195,7 +202,7 @@
               <p>Technology Explored</p>
             </div>
             <div class="stat">
-              <h3><i class="fa-solid fa-laptop-file"></i></h3>
+              <h3>Learn</h3>
               <p>Exploring & learning</p>
             </div>
           </div>
@@ -397,7 +404,7 @@
       <div class="container">
         <div class="portfolio-grid">
           <div class="portfolio-item">
-            <img src="IMG/TikMe1.png" alt="TickMe IMG" />
+            <img src="IMG/TikMe1.png" alt="TickMe IMG" loading="lazy" />
             <h3>1. TickMe Todo-list</h3>
             <p>
               <br />
@@ -418,7 +425,7 @@
             </p>
           </div>
           <div class="portfolio-item">
-            <img src="IMG/mini tune.png" alt="Mini Tune IMG" />
+            <img src="IMG/mini tune.png" alt="Mini Tune IMG" loading="lazy" />
             <h3>2. Mini Tune Music</h3>
             <p>
               <br />
@@ -439,7 +446,7 @@
             </p>
           </div>
           <div class="portfolio-item">
-            <img src="IMG/spotify.png" alt="Spotify IMG" />
+            <img src="IMG/spotify.png" alt="Spotify IMG" loading="lazy" />
             <h3>3. Spotify Frontend Clone</h3>
             <p>
               <br />
@@ -463,7 +470,7 @@
           </div>
 
           <div class="portfolio-item">
-            <img src="IMG/music.png" alt=" VPS Music IMG" />
+            <img src="IMG/music.png" alt=" VPS Music IMG" loading="lazy" />
             <h3>4. VPS Music Player</h3>
             <p>
               <br />
@@ -486,7 +493,7 @@
             </p>
           </div>
           <div class="portfolio-item">
-            <img src="IMG/TTT.png" alt="Tic Tac Toe IMG" />
+            <img src="IMG/TTT.png" alt="Tic Tac Toe IMG" loading="lazy" />
             <h3>5. Tic Tac Toe Game</h3>
             <p>
               <br />
@@ -509,7 +516,10 @@
             </p>
           </div>
           <div class="portfolio-item">
-            <img src="IMG/login.png" alt="Animated Login From IMG" />
+            <img
+              src="IMG/login.png"
+              alt="Animated Login From IMG"
+              loading="lazy" />
             <h3>6. Animated Login From</h3>
             <p>
               <br />
@@ -532,7 +542,7 @@
             </p>
           </div>
           <div class="portfolio-item">
-            <img src="IMG/Q-game.png" alt="Tic Tac Toe IMG" />
+            <img src="IMG/Q-game.png" alt="Tic Tac Toe IMG" loading="lazy" />
             <h3>7. Simple Quiz website</h3>
             <p>
               <br />
@@ -552,7 +562,7 @@
             </p>
           </div>
           <div class="portfolio-item">
-            <img src="IMG/python.png" alt=" python code IMG" />
+            <img src="IMG/python.png" alt=" python code IMG" loading="lazy" />
             <h3>8. Python Basics & Algorithms</h3>
             <p>
               <br />
@@ -571,7 +581,7 @@
             </p>
           </div>
           <div class="portfolio-item">
-            <img src="IMG/python.png" alt=" python code IMG" />
+            <img src="IMG/python.png" alt=" python code IMG" loading="lazy" />
             <h3>9. Upcoming...</h3>
             <p>
               <br />
@@ -726,6 +736,26 @@
             tooltips: true,
           });
         }, 1000);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loader = document.querySelector(".loader");
+        const mainImg = document.querySelector(".hero-image img");
+        if (mainImg && loader) {
+          if (mainImg.complete) {
+            loader.classList.add("fade-out");
+            setTimeout(() => (loader.style.display = "none"), 600);
+          } else {
+            mainImg.addEventListener("load", function () {
+              loader.classList.add("fade-out");
+              setTimeout(() => (loader.style.display = "none"), 600);
+            });
+          }
+        } else if (loader) {
+          loader.classList.add("fade-out");
+          setTimeout(() => (loader.style.display = "none"), 600);
+        }
       });
     </script>
   </body>
